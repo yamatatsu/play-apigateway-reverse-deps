@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { PlayApigatewayReverseDepsStack } from '../lib/play-apigateway-reverse-deps-stack';
+import { ApiGatewayStack } from '../lib/apigateway-stack';
 
 const app = new cdk.App();
-new PlayApigatewayReverseDepsStack(app, 'PlayApigatewayReverseDepsStack', {
+new ApiGatewayStack(app, 'PlayApigatewayReverseDepsStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
