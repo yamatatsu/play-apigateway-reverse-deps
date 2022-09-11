@@ -1,16 +1,15 @@
-import * as cdk from 'aws-cdk-lib';
-import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+import * as cdk from "aws-cdk-lib";
+import { Construct } from "constructs";
+import * as apigateway from "aws-cdk-lib/aws-apigateway";
 
 export class ApiGatewayStack extends cdk.Stack {
+  public restApi: apigateway.IRestApi;
+
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
+    const restApi = new apigateway.RestApi(this, "ApiGateway");
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'PlayApigatewayReverseDepsQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    this.restApi = restApi;
   }
 }
